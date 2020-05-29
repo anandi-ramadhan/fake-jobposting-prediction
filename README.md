@@ -3,5 +3,5 @@ This dataset contains 18K job descriptions out of which about 800 are fake. The 
 
 ## Acknowledgements
 The University of the Aegean | Laboratory of Information & Communication Systems Security
-
+<br/>
 http://emscad.samos.aegean.gr/

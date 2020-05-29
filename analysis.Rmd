@@ -1,18 +1,103 @@
 ---
-title: "R Notebook"
+title: " Fake Job Posting Prediction"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
 ```{r}
-plot(cars)
+library(tidyverse)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r}
+job <- read_csv('dataset/fake_job_postings.csv')
+job
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```{r}
+glimpse(job)
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```{r}
+summary(job)
+```
+
+There are 17,880 records. 4.843% jobs posted are fraudulent. We're dealing with a class-imbalanced problem.
+
+## Data Cleaning
+
+There is a column named 'function' in the dataset which conflicts R's base function. This can be annoying later, so we're going to fix this.
+Also, the job_id variable won't do a lot of good either, so we're dropping this variable now.
+
+Once done, we'll go ahead to look for missing values.
+
+```{r}
+job <- job %>% 
+  rename(func = `function`) %>% 
+  select(-job_id)
+
+library(visdat)
+
+vis_miss(job)
+```
+
+It's clear to see the salary_range is the variable which has the most missing values. Let's find out why this occured.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
